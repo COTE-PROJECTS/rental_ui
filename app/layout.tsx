@@ -6,7 +6,7 @@ import { Poppins } from 'next/font/google';
 
 export const metadata: Metadata = {
     title: {
-        template: '%s ',
+        template: '%s | NyumbaRental ',
         default: '',
     },
 };

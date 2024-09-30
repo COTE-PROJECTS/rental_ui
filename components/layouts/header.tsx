@@ -33,6 +33,7 @@ import IconMenuPages from '@/components/icon/menu/icon-menu-pages';
 import IconMenuMore from '@/components/icon/menu/icon-menu-more';
 import { usePathname, useRouter } from 'next/navigation';
 import { getTranslation } from '@/i18n';
+import Image from 'next/image';
 
 const Header = () => {
     const pathname = usePathname();
@@ -164,7 +165,7 @@ const Header = () => {
                     </div>
 
                     <div className="hidden ltr:mr-2 rtl:ml-2 sm:block">
-                        <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
+                        {/* <ul className="flex items-center space-x-2 rtl:space-x-reverse dark:text-[#d0d2d6]">
                             <li>
                                 <Link href="/apps/calendar" className="block rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60">
                                     <IconCalendar />
@@ -180,43 +181,18 @@ const Header = () => {
                                     <IconChatNotification />
                                 </Link>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div className="flex items-center space-x-1.5 ltr:ml-auto rtl:mr-auto rtl:space-x-reverse dark:text-[#d0d2d6] sm:flex-1 ltr:sm:ml-0 sm:rtl:mr-0 lg:space-x-2">
                         <div className="sm:ltr:mr-auto sm:rtl:ml-auto">
-                            <form
-                                className={`${search && '!block'} absolute inset-x-0 top-1/2 z-10 mx-4 hidden -translate-y-1/2 sm:relative sm:top-0 sm:mx-0 sm:block sm:translate-y-0`}
-                                onSubmit={() => setSearch(false)}
-                            >
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        className="peer form-input bg-gray-100 placeholder:tracking-widest ltr:pl-9 ltr:pr-9 rtl:pl-9 rtl:pr-9 sm:bg-transparent ltr:sm:pr-4 rtl:sm:pl-4"
-                                        placeholder="Search..."
-                                    />
-                                    <button type="button" className="absolute inset-0 h-9 w-9 appearance-none peer-focus:text-primary ltr:right-auto rtl:left-auto">
-                                        <IconSearch className="mx-auto" />
-                                    </button>
-                                    <button type="button" className="absolute top-1/2 block -translate-y-1/2 hover:opacity-80 ltr:right-2 rtl:left-2 sm:hidden" onClick={() => setSearch(false)}>
-                                        <IconXCircle />
-                                    </button>
-                                </div>
-                            </form>
-                            <button
-                                type="button"
-                                onClick={() => setSearch(!search)}
-                                className="search_btn rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 dark:bg-dark/40 dark:hover:bg-dark/60 sm:hidden"
-                            >
-                                <IconSearch className="mx-auto h-4.5 w-4.5 dark:text-[#d0d2d6]" />
-                            </button>
+
                         </div>
                         <div>
                             {themeConfig.theme === 'light' ? (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'light' &&
+                                    className={`${themeConfig.theme === 'light' &&
                                         'flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => dispatch(toggleTheme('dark'))}
                                 >
                                     <IconSun />
@@ -226,10 +202,9 @@ const Header = () => {
                             )}
                             {themeConfig.theme === 'dark' && (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'dark' &&
+                                    className={`${themeConfig.theme === 'dark' &&
                                         'flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => dispatch(toggleTheme('system'))}
                                 >
                                     <IconMoon />
@@ -237,17 +212,16 @@ const Header = () => {
                             )}
                             {themeConfig.theme === 'system' && (
                                 <button
-                                    className={`${
-                                        themeConfig.theme === 'system' &&
+                                    className={`${themeConfig.theme === 'system' &&
                                         'flex items-center rounded-full bg-white-light/40 p-2 hover:bg-white-light/90 hover:text-primary dark:bg-dark/40 dark:hover:bg-dark/60'
-                                    }`}
+                                        }`}
                                     onClick={() => dispatch(toggleTheme('light'))}
                                 >
                                     <IconLaptop />
                                 </button>
                             )}
                         </div>
-                        <div className="dropdown shrink-0">
+                        {/* <div className="dropdown shrink-0">
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
@@ -274,8 +248,8 @@ const Header = () => {
                                     })}
                                 </ul>
                             </Dropdown>
-                        </div>
-                        <div className="dropdown shrink-0">
+                        </div> */}
+                        {/* <div className="dropdown shrink-0">
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
@@ -403,18 +377,18 @@ const Header = () => {
                                     )}
                                 </ul>
                             </Dropdown>
-                        </div>
+                        </div> */}
                         <div className="dropdown flex shrink-0">
                             <Dropdown
                                 offset={[0, 8]}
                                 placement={`${isRtl ? 'bottom-start' : 'bottom-end'}`}
                                 btnClassName="relative group block"
-                                button={<img className="h-9 w-9 rounded-full object-cover saturate-50 group-hover:saturate-100" src="/assets/images/user-profile.jpeg" alt="userProfile" />}
+                                button={<Image width={200} height={200} className="h-9 w-9 rounded-full object-cover saturate-50 group-hover:saturate-100" src="/assets/images/user-profile.jpeg" alt="userProfile" />}
                             >
                                 <ul className="w-[230px] !py-0 font-semibold text-dark dark:text-white-dark dark:text-white-light/90">
                                     <li>
                                         <div className="flex items-center px-4 py-4">
-                                            <img className="h-10 w-10 rounded-md object-cover" src="/assets/images/user-profile.jpeg" alt="userProfile" />
+                                            <Image width={200} height={200} className="h-10 w-10 rounded-md object-cover" src="/assets/images/user-profile.jpeg" alt="userProfile" />
                                             <div className="truncate ltr:pl-4 rtl:pr-4">
                                                 <h4 className="text-base">
                                                     John Doe
@@ -427,25 +401,25 @@ const Header = () => {
                                         </div>
                                     </li>
                                     <li>
-                                        <Link href="/users/profile" className="dark:hover:text-white">
+                                        {/* <Link href="/users/profile" className="dark:hover:text-white">
                                             <IconUser className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" />
                                             Profile
-                                        </Link>
+                                        </Link> */}
                                     </li>
-                                    <li>
+                                    {/* <li>
                                         <Link href="/apps/mailbox" className="dark:hover:text-white">
                                             <IconMail className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" />
                                             Inbox
                                         </Link>
-                                    </li>
-                                    <li>
+                                    </li> */}
+                                    {/* <li>
                                         <Link href="/auth/boxed-lockscreen" className="dark:hover:text-white">
                                             <IconLockDots className="h-4.5 w-4.5 shrink-0 ltr:mr-2 rtl:ml-2" />
                                             Lock Screen
                                         </Link>
-                                    </li>
+                                    </li> */}
                                     <li className="border-t border-white-light dark:border-white-light/10">
-                                        <Link href="/auth/boxed-signin" className="!py-3 text-danger">
+                                        <Link href="/auth/login" className="!py-3 text-danger">
                                             <IconLogout className="h-4.5 w-4.5 shrink-0 rotate-90 ltr:mr-2 rtl:ml-2" />
                                             Sign Out
                                         </Link>
