@@ -5,17 +5,19 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsCustomAnimation = () => {
     const showAlert = async () => {
-        Swal.fire({
-            title: 'Custom animation with Animate.css',
-            showClass: {
-                popup: 'animate__animated animate__flip',
-            },
-            hideClass: {
-                popup: 'animate__animated animate__fadeOutUp',
-            },
-            padding: '2em',
-            customClass: 'sweet-alerts',
-        });
+        // Swal.fire({
+        //     title: 'Custom animation with Animate.css',
+        //     showClass: {
+        //         popup: 'animate__animated animate__flip',
+        //     },
+        //     hideClass: {
+        //         popup: 'animate__animated animate__fadeOutUp',
+        //     },
+        //     padding: '2em',
+        //     customClass: {
+        //         container: 'sweet-alerts',
+        //     },
+        // });
     };
     return (
         <PanelCodeHighlight

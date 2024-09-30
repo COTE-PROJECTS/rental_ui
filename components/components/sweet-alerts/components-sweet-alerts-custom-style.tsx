@@ -5,11 +5,13 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsCustomStyle = () => {
     const showAlert = async () => {
-        Swal.fire({
+        await Swal.fire({
             title: 'Custom width, padding, background.',
             width: 600,
             padding: '7em',
-            customClass: 'background-modal sweet-alerts',
+            customClass: {
+                container: 'background-modal sweet-alerts'
+            },
             background: '#fff url(/assets/images/sweet-bg.jpg) no-repeat 100% 100%',
         });
     };

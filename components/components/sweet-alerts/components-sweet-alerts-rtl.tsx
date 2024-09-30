@@ -5,14 +5,16 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsRtl = () => {
     const showAlert = async () => {
-        Swal.fire({
+        await Swal.fire({
             title: 'هل تريد الاستمرار؟',
             confirmButtonText: 'نعم',
             cancelButtonText: 'لا',
             showCancelButton: true,
             showCloseButton: true,
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts',
+            },
         });
     };
 

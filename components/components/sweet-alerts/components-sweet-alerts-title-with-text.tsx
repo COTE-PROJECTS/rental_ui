@@ -5,12 +5,14 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsTitleWithText = () => {
     const showAlert = async () => {
-        Swal.fire({
+        await Swal.fire({
             icon: 'question',
             title: 'The Internet?',
             text: 'That thing is still around?',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                popup: 'sweet-alerts'
+            },
         });
     };
 

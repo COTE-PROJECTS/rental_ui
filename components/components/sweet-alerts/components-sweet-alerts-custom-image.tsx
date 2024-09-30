@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsCustomImage = () => {
     const showAlert = async () => {
-        Swal.fire({
+        await Swal.fire({
             title: 'Sweet!',
             text: 'Modal with a custom image.',
             imageUrl: '/assets/images/custom-swal.svg',
@@ -13,7 +13,7 @@ const ComponentsSweetAlertsCustomImage = () => {
             imageHeight: 'auto',
             imageAlt: 'Custom image',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: { popup: 'sweet-alerts' },
         });
     };
     return (

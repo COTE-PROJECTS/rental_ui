@@ -5,12 +5,14 @@ import Swal from 'sweetalert2';
 
 const ComponentsSweetAlertsSuccess = () => {
     const showAlert = async () => {
-        Swal.fire({
+        await Swal.fire({
             icon: 'success',
             title: 'Good job!',
             text: 'You clicked the!',
             padding: '2em',
-            customClass: 'sweet-alerts',
+            customClass: {
+                container: 'sweet-alerts'
+            },
         });
     };
     return (
