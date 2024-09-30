@@ -2,15 +2,15 @@ import ProviderComponent from '@/components/layouts/provider-component';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import '../styles/tailwind.css';
 import { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 
 export const metadata: Metadata = {
     title: {
-        template: '%s | VRISTO - Multipurpose Tailwind Dashboard Template',
-        default: 'VRISTO - Multipurpose Tailwind Dashboard Template',
+        template: '%s ',
+        default: '',
     },
 };
-const nunito = Nunito({
+const nunito = Poppins({
     weight: ['400', '500', '600', '700', '800'],
     subsets: ['latin'],
     display: 'swap',
