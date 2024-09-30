@@ -510,7 +510,7 @@ const rowData = [
 
 const col = ['id', 'firstName', 'lastName', 'company', 'age', 'dob', 'email', 'phone'];
 
-const ComponentsDatatablesExport = () => {
+const DatatableComponent = () => {
     const [page, setPage] = useState(1);
     const PAGE_SIZES = [10, 20, 30, 50, 100];
     const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
@@ -734,4 +734,4 @@ const ComponentsDatatablesExport = () => {
     );
 };
 
-export default ComponentsDatatablesExport;
+export default DatatableComponent;
