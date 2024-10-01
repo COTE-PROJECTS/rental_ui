@@ -6,7 +6,7 @@ import IconFile from '@/components/icon/icon-file';
 import IconPrinter from '@/components/icon/icon-printer';
 import IconPlusCircle from '../icon/icon-plus-circle';
 
-const DatatableComponent = ({ rowData, cols, onAdd, addLabel = "ADD ITEM", exportCols }: { rowData?: any[], addLabel?: string; onAdd?: () => void; exportCols?: string[]; cols?: any[] }) => {
+const DatatableComponent = ({ rowData, tableName = "", cols, onAdd, addLabel = "ADD ITEM", exportCols }: { tableName?: string; rowData?: any[], addLabel?: string; onAdd?: () => void; exportCols?: string[]; cols?: any[] }) => {
     const [page, setPage] = useState(1);
     const PAGE_SIZES = [10, 20, 30, 50, 100];
     const [pageSize, setPageSize] = useState(PAGE_SIZES[0]);
@@ -58,10 +58,10 @@ const DatatableComponent = ({ rowData, cols, onAdd, addLabel = "ADD ITEM", expor
         return '';
     };
 
-    const exportTable = (type: any) => {
+    const exportTable = (type: any, tableName: string) => {
         let columns: any = exportCols;
         let records = rowData;
-        let filename = 'table';
+        let filename = tableName;
 
         let newVariable: any;
         newVariable = window.navigator;
@@ -172,21 +172,21 @@ const DatatableComponent = ({ rowData, cols, onAdd, addLabel = "ADD ITEM", expor
     return (
         <div className="panel mt-3">
             <div className="mb-4.5 flex flex-col justify-between gap-5 md:flex-row md:items-center">
-                <div className="flex flex-wrap items-center">
-                    <button type="button" onClick={() => exportTable('csv')} className="btn btn-primary btn-sm m-1 ">
+                {(exportCols?.length ?? 0) > 0 ? (<div className="flex flex-wrap items-center">
+                    <button type="button" onClick={() => exportTable('csv', tableName)} className="btn btn-primary btn-sm m-1 ">
                         <IconFile className="h-5 w-5 ltr:mr-2 rtl:ml-2" />
                         CSV
                     </button>
-                    <button type="button" onClick={() => exportTable('txt')} className="btn btn-primary btn-sm m-1">
+                    <button type="button" onClick={() => exportTable('txt', tableName)} className="btn btn-primary btn-sm m-1">
                         <IconFile className="h-5 w-5 ltr:mr-2 rtl:ml-2" />
                         TXT
                     </button>
 
-                    <button type="button" onClick={() => exportTable('print')} className="btn btn-primary btn-sm m-1">
+                    <button type="button" onClick={() => exportTable('print', tableName)} className="btn btn-primary btn-sm m-1">
                         <IconPrinter className="ltr:mr-2 rtl:ml-2" />
                         PRINT
                     </button>
-                </div>
+                </div>) : (<div className="flex flex-wrap items-center"></div>)}
 
                 <div className='flex flex-row justify-between'>
                     <input type="text" className="form-input w-auto" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />

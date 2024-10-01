@@ -41,6 +41,7 @@ import IconUsers from '../icon/icon-users';
 import IconFile from '../icon/icon-file';
 import IconFolderPlus from '../icon/icon-folder-plus';
 import IconHome from '../icon/icon-home';
+import IconEthereum from '../icon/icon-ethereum';
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -137,11 +138,12 @@ const Sidebar = () => {
                             {/* REPORTS */}
                             <SidebarTile icon={<IconFolderPlus className="shrink-0 group-hover:!text-primary" />} label='Payment Reports' url='/reports' />
 
-                            {/* <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
+                            <h2 className="-mx-4 mb-1 flex items-center bg-white-light/30 px-7 py-3 font-extrabold uppercase dark:bg-dark dark:bg-opacity-[0.08]">
                                 <IconMinus className="hidden h-5 w-4 flex-none" />
                                 <span>SYSTEM CONFIG</span>
                             </h2>
-                            <SidebarTile icon={<IconSettings className="shrink-0 group-hover:!text-primary" />} url="/users/user-account-settings" label="System Settings" /> */}
+                            <SidebarTile icon={<IconSettings className="shrink-0 group-hover:!text-primary" />} url="/users/user-account-settings" label="System Settings" />
+                            <SidebarTile icon={<IconEthereum className="shrink-0 group-hover:!text-primary" />} url="/users/user-account-settings" label="Subscription" />
 
                         </ul>
                     </PerfectScrollbar>

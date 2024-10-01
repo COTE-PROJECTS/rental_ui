@@ -7,7 +7,7 @@ interface DashCardInterface {
     subtitle: string;
     mainLabel: string;
 }
-const DashboardCard = ({ to, from, label, subtitle, mainLabel }: DashCardInterface) => {
+const DashboardCard = ({ to, from, label, subtitle, mainLabel, }: DashCardInterface) => {
     return (
         <>
             {/* {from} */}

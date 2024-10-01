@@ -13,7 +13,20 @@ const ReportsDatatable = () => {
                 <input type="month" name="" id="payment-month" className='form-input mx-3' />
                 <button className='btn btn-primary btn-md w-36 m-1 p-2' type='button'>Filter</button>
             </form>
-            <DatatableComponent addLabel='' />
+            <DatatableComponent
+                tableName='Payments'
+                exportCols={["ID", "House", "Tenant", "Amount", "Date", "Status"]}
+                cols={[
+                    { title: 'ID', key: 'id' },
+                    { title: 'Date', key: 'date' },
+                    { title: 'Tenant', key: 'tenant' },
+                    { title: 'House', key: 'house' },
+                    { title: 'Invoice', key: 'invoice' },
+                    { title: 'Amount', key: 'amount' },
+
+
+                ]}
+                addLabel='' />
         </div >
     );
 };

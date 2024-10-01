@@ -10,13 +10,19 @@ import DatatableComponent from '@/components/datatables/datatable-component';
 const CategoriesDatatable = () => {
     const [addContactModal, setAddContactModal] = useState<any>(false);
     const [isDeleteNoteModal, setIsDeleteNoteModal] = useState<any>(false);
-    const [isShowNoteMenu, setIsShowNoteMenu] = useState<any>(false);
+    // const [isShowNoteMenu, setIsShowNoteMenu] = useState<any>(false);
     const [isViewNoteModal, setIsViewNoteModal] = useState<any>(false);
     return (
         <>
             {/* data table */}
             <DatatableComponent
                 addLabel='ADD CATEGORY'
+                cols={[
+                    { title: 'ID', key: 'id' },
+                    { title: 'Category Name', key: 'name' },
+                    { title: 'Actions', key: 'actions' },
+                ]}
+
                 onAdd={() => setAddContactModal(true)}
             />
             {/* modals */}
