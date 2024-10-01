@@ -2,15 +2,18 @@ import DatatableComponent from '@/components/datatables/datatable-component';
 import InfoComponent from '@/components/layouts/info-component';
 import { Metadata } from 'next';
 import React from 'react';
-import TenantsDataTable from './TenantsDataTable';
-export const metadata: Metadata = {
-    title: 'Tenants',
-}
+import HousesDatatable from './HousesDatatable';
+const metadata: Metadata = {
+    title: 'Houses',
+};
+export { metadata };
 const Page = () => {
     return (
         <div>
-            <InfoComponent info="Here are your tenants" />
-            <TenantsDataTable />
+            <InfoComponent info="Houses" />
+            <HousesDatatable
+
+            />
         </div>
     );
 };

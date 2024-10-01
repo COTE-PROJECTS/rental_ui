@@ -1,10 +1,17 @@
+import InfoComponent from '@/components/layouts/info-component';
+import { Metadata } from 'next';
 import React from 'react';
-
+import PaymentDataTable from './PaymentDataTable';
+export const metadata: Metadata = {
+    title: "Payments"
+}
 const Page = () => {
     return (
-        <div>
-            payments
-        </div>
+        <>
+            <InfoComponent info='Payments' />
+            {/* table */}
+            <PaymentDataTable />
+        </>
     );
 };
 
