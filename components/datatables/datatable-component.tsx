@@ -170,7 +170,7 @@ const DatatableComponent = ({ rowData, cols, onAdd, addLabel = "ADD ITEM", expor
             .join(' ');
     };
     return (
-        <div className="panel mt-6">
+        <div className="panel mt-3">
             <div className="mb-4.5 flex flex-col justify-between gap-5 md:flex-row md:items-center">
                 <div className="flex flex-wrap items-center">
                     <button type="button" onClick={() => exportTable('csv')} className="btn btn-primary btn-sm m-1 ">
@@ -190,10 +190,12 @@ const DatatableComponent = ({ rowData, cols, onAdd, addLabel = "ADD ITEM", expor
 
                 <div className='flex flex-row justify-between'>
                     <input type="text" className="form-input w-auto" placeholder="Search..." value={search} onChange={(e) => setSearch(e.target.value)} />
-                    <button type="button" onClick={onAdd} className="btn btn-primary btn-sm mx-2">
-                        <IconPlusCircle className="ltr:mr-2 rtl:ml-2" />
-                        {addLabel}
-                    </button>
+                    {addLabel !== "" ?
+                        (<button type="button" onClick={onAdd} className="btn btn-primary btn-sm mx-2">
+                            <IconPlusCircle className="ltr:mr-2 rtl:ml-2" />
+                            {addLabel}
+                        </button>)
+                        : (<></>)}
                 </div>
             </div>
             <div className="datatables">
