@@ -1,6 +1,5 @@
 "use client"
 import DatatableComponent from '@/components/datatables/datatable-component';
-import { Button } from '@mantine/core';
 import React from 'react';
 
 const ReportsDatatable = () => {
